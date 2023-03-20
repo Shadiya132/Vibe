@@ -2,7 +2,8 @@ Vibe
 Vibe is an app where users can meet, share and discuss their thoughts with each other. They can also engage in playing games with other users.
 
 Wireframe
-￼
+<img width="834" alt="Screen Shot 2023-03-20 at 12 35 05 PM" src="https://user-images.githubusercontent.com/112830558/226408121-92f88e81-7d4c-4a59-bfd9-0480f2a585b3.png">
+
 
 User Stories
 AUTH
@@ -27,7 +28,8 @@ Stretch goals
 Backend
 
 ERD
-￼
+<img width="460" alt="Screen Shot 2023-03-20 at 12 33 46 PM" src="https://user-images.githubusercontent.com/112830558/226408057-36bc9e74-1943-420c-8c3a-2d1e575b3710.png">
+
 
 Models
 - A User has many User_posts, and has many User_Posts through Posts.
@@ -35,7 +37,8 @@ Models
 - A user_post belongs to User_id and belongs to Post_id.
 
 API Endpoints
-￼
+<img width="627" alt="Screen Shot 2023-03-20 at 12 36 24 PM" src="https://user-images.githubusercontent.com/112830558/226408160-36d24c36-d5c2-4822-8418-47f52cdbbbdb.png">
+
 
 Validations
 - Validates presence for first_name, last_name, email, username, and password.
