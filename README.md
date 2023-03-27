@@ -1,6 +1,6 @@
 # Vibe
 
-Vibe is an app where users can meet, share and discuss their thoughts with each other. They can also engage in playing games with other users.
+Vibe is an app where users can meet, share and discuss their thoughts with each other. 
 
 ## Wireframe
 <img width="834" alt="Screen Shot 2023-03-20 at 12 35 05 PM" src="https://user-images.githubusercontent.com/112830558/226408121-92f88e81-7d4c-4a59-bfd9-0480f2a585b3.png">
