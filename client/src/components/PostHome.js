@@ -9,11 +9,11 @@ import NewPostForm from "./NewPostForm";
 
 
 
-function Home({posts, removePost, currentPost, setCurrentPost, currentUser, handleLogout, user, setPosts, newSearch, search, editPost}) {
+function PostHome({posts, currentUser, handleLogout, user, removePost, setPosts, currentPost, setCurrentPost, newSearch, search}) {
 
     const [poster, setPoster] = useState('');
-    const history = useHistory()
     const { id } = useParams
+    const history = useHistory()
 
     useEffect(() => {
         fetch(`/users/${currentPost.poster_id}`)
@@ -22,7 +22,12 @@ function Home({posts, removePost, currentPost, setCurrentPost, currentUser, hand
     }, [])
 
 
-      
+    function editPost(modifiedPost) {
+     const updatePost = currentPost.map(post => post.id === modifiedPost.id ? modifiedPost : post)
+     setCurrentPost(updatePost)
+    }
+
+
     return (
           
         <div className="home">
@@ -44,8 +49,10 @@ function Home({posts, removePost, currentPost, setCurrentPost, currentUser, hand
                 user={user}
                 currentUser={currentUser} 
                 removePost={removePost}
-                poster={poster}
+                currentPost={currentPost}
+                setCurrentPost={setCurrentPost}
                 editPost={editPost}
+                poster={poster}
                 />)}
                 </ul>
         </div>
@@ -53,4 +60,4 @@ function Home({posts, removePost, currentPost, setCurrentPost, currentUser, hand
 }
 
 
-export default Home;
+export default PostHome;
