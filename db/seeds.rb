@@ -27,6 +27,16 @@ post5 = (user_id = User.all.sample.id
 post = Post.create(post: "Anyone watching last of us?????", likes: 0, poster_id: user_id)
 UserPost.create(user_id: user_id, post_id: post.id))
 
+
+puts "seeding comments..."
+comment1 = Comment.create!(post_id: post1.id, user_id: user4.id, comment: "You're right! The weather is beautiful")
+comment2 = Comment.create!(post_id: post2.id, user_id: user3.id, comment: "Same im bored toooo...")
+comment3 = Comment.create!(post_id: post3.id, user_id: user1.id, comment: "Don't worry its gonna be saturday tomorrow, so you have that to look forward to!")
+comment4 = Comment.create!(post_id: post4.id, user_id: user2.id, comment: "I bet you'll look great!")
+comment5 = Comment.create!(post_id: post5.id, user_id: user4.id, comment: "I'M LITERALLY OBSESSED!!!!! Who's your fave character??")
+comment6 = Comment.create!(post_id: post2.id, user_id: user2.id, comment: "Aren't we all lol :)")
+
+
 #  User_Post data
 # UserPost.create!(user_id: user1.id, post_id: post1.id)
 # UserPost.create!(user_id: user2.id, post_id: post2.id)

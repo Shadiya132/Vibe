@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments, only: []
   resources :posts, only: [:index, :show, :create, :destroy, :update]
   resources :user_posts, only: [:show, :create, :destroy, :index]
   resources :users, except: [:new, :edit]
@@ -13,10 +14,10 @@ Rails.application.routes.draw do
   get '/me', to: "users#show"
   get '/profile', to: "users#show"
 
-  get '/posts/', to: 'posts#show'
-  post '/posts', to: 'posts#create'
-  delete '/posts/:post_id', to: 'posts#destroy'
-  patch '/posts/:post_id', to: 'posts#update'
+  get '/posts/:post_id/comments', to: 'comments#show_all'
+  post '/posts/:post_id/comments', to: 'comments#create'
+  delete '/posts/:post_id/comments/:id', to: 'posts#destroy'
+  patch '/posts/:post_id/comments/:id', to: 'posts#update'
 
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end

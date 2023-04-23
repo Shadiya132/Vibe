@@ -25,8 +25,9 @@ function Signup({ handleLogin }) {
           username: username,
           email: email,
           password: password,
-          first_name,
-          last_name,
+          first_name: first_name,
+          last_name: last_name,
+          age: age,
       }
       fetch('/signup', {
           method: 'POST',
@@ -77,6 +78,14 @@ function Signup({ handleLogin }) {
                 required
                 value={last_name}
                 onChange={(e) => setLastName(e.target.value)}
+                />
+                 <input 
+                className="signup-input"
+                type='age'
+                placeholder="Age"
+                required
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
                 />
                 <input 
                 className="signup-input"

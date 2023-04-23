@@ -15,8 +15,9 @@ function Search({search, newSearch}) {
     }
 
     return (
-        <div>
-            <input className="search" placeholder="search" onChange={handleSearch} value={search} />
+        <div className="search-bar">
+            <SearchIcon className="search-icon" fontSize="large"></SearchIcon>
+            <input className="search" placeholder="Search" onChange={handleSearch} value={search} />
         </div>
     )
 }

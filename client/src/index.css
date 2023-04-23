@@ -241,7 +241,7 @@ a {
   background: #000000;
   height: 40px;
   border-radius: 5px;
-  margin-left: 25px;
+  margin-left: 85px;
   margin-right: 15px;
   width: 115px;
   font-weight: 650;
@@ -265,7 +265,7 @@ a {
 .vibe {
   color:#918f8f;
   margin-left: 50px;
-  font-size: 45px;
+  font-size: 55px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 15px;
 }
@@ -286,11 +286,11 @@ a {
   font-size: 25px;
   text-align: center;
   position: relative;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   padding: 60px;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   background: #c8c8c8;
-  box-shadow: 14px 14px 20px #484848, -14px -14px 20px #858585;
+  /* box-shadow: 14px 14px 20px #484848, -14px -14px 20px #858585; */
 }
 
 .profile-image {
@@ -302,9 +302,16 @@ a {
 .like-btn{
  margin-top: 125px;
  margin-left: 25px;
- background-color: #000000;
- color: white;
+ color: rgb(0, 0, 0);
  border: #2d2d2d;
+ border-radius: 5px;
+ height: 24px;
+}
+
+.icon-1 {
+  margin-top: 125px;
+ margin-left: 25px;
+ color: rgb(228, 137, 137);
  border-radius: 5px;
  height: 24px;
 }
@@ -314,14 +321,24 @@ a {
   padding-right: 25px;
 }
 
+.search-bar {
+  display: flex;
+  height: 65px;
+}
+
 .search {
-  padding: 10px 0;
   font-size: 16px;
+  padding-left: 5px;
+  font-size: 20px;
   color: #fff;
   border: none;
   border-bottom: 1px solid #d2d0d0;
   outline: none;
   background: transparent;
+}
+
+.search-icon {
+  color: white;
 }
 
 
@@ -330,9 +347,37 @@ p {
 }
 
 .welcome {
-  font-size: 150px;
+  font-size: 165px;
 }
 
 .register {
-  margin-left: 15px;
+  margin-left: 165px;
+}
+
+.drop {
+  color: white;
+}
+
+.like-btn:hover {
+  color: rgb(111, 111, 108);
+}
+
+.icon-1:hover {
+  color: #eab3b3;
+}
+
+.pro-icon {
+  color: white;
+}
+
+.username {
+  color: rgb(24, 24, 207);
+}
+
+.name2{
+  color: rgb(45, 45, 48);
+  font-size: 55px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-left: 85px;
 }

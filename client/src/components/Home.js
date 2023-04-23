@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Nav from "./Nav";
 import Post from './Post'
+import PostCard from "./PostCard";
 import { useParams } from "react-router-dom"
 import { Link } from 'react-router-dom'
 import { useHistory } from "react-router-dom";
@@ -9,7 +10,7 @@ import NewPostForm from "./NewPostForm";
 
 
 
-function Home({posts, removePost, currentPost, setCurrentPost, currentUser, handleLogout, user, setPosts, newSearch, search, editPost}) {
+function Home({user, posts, comments, removePost, currentPost, stateComments, setComments, currentUser, handleLogout, setPosts, newSearch, search, editPost, setCurrentPost}) {
 
     const [poster, setPoster] = useState('');
     const history = useHistory()
@@ -20,6 +21,12 @@ function Home({posts, removePost, currentPost, setCurrentPost, currentUser, hand
         .then(resp => resp.json())
         .then(data => setPoster(data.username))
     }, [])
+
+    // useEffect(() => {
+    //     fetch(window.location.href)
+    //     .then(r => r.json())
+    //     .then(data => setCurrentPost(data))
+    // }, [posts])
 
 
       
@@ -38,14 +45,19 @@ function Home({posts, removePost, currentPost, setCurrentPost, currentUser, hand
             user={user}
             />
             <ul className="post-card">
-                {posts.map(post => <Post 
+                {posts.map(post => <PostCard 
                 post={post} 
                 key={post.id} 
                 user={user}
+                currentPost={currentPost}
                 currentUser={currentUser} 
                 removePost={removePost}
+                setCurrentPost={setCurrentPost}
                 poster={poster}
                 editPost={editPost}
+                comments={comments}
+                setComments={setComments}
+                stateComments={stateComments}
                 />)}
                 </ul>
         </div>

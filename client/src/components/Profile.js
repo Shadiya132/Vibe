@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link} from "react-router-dom";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ProfileNav from "./ProfileNav";
 
 
@@ -7,12 +8,12 @@ import ProfileNav from "./ProfileNav";
 
 function Profile({ handleLogout, onEdit, currentUser, onDeleteUser }) {
     
-//     const [showEditForm, setShowEditForm] = useState(false)
+    // const [showEditForm, setShowEditForm] = useState(false)
     const history = useHistory()
 
 
 
-//     // initial data from user
+    // initial data from user
 //     const initialState = {
 //       username: currentUser.username,
 //       password: currentUser.password,
@@ -36,13 +37,13 @@ function Profile({ handleLogout, onEdit, currentUser, onDeleteUser }) {
 //     const requestObj = {
 //         method: "PATCH",
 //         headers: {
-//             "Content-Type": "application/json",
+//             "Content-Type": "application/json"
 //         },
 //         body: JSON.stringify(form)
 //     }
 
 // await fetch(`users/${currentUser.id}`, requestObj)
-//         .then(res => res.json())
+//         .then(resp => resp.json())
 //         .then(() => {
 //             onEdit(form) 
 //             // history.push("/Profile")
@@ -88,16 +89,21 @@ function Profile({ handleLogout, onEdit, currentUser, onDeleteUser }) {
         return (
                 <div className='profile'>
                   <ProfileNav />
+                  <div className="name2">@{currentUser.username}'s Profile</div>
                      <div className="pro-details">
+                        <AccountCircleIcon sx={{ fontSize: 90 }}></AccountCircleIcon>
                          {/* <div className="profile-image" role="button" title="Click to edit photo">
                             <img src={currentUser.image} alt="profile" /> 
                         </div>  */}
                         <div className="username">@{currentUser.username}</div>
                         <br/>
                         <div className="name">{currentUser.first_name} {currentUser.last_name} </div>
-                        <div>Email: {currentUser.email}</div>
                         <br/>
-                        <button className="pro-btn" onClick={handleClick}> Logout </button>
+                        <div>Email Address: {currentUser.email}</div>
+                        <br/>
+                        <div>{currentUser.age} Years Old</div>
+                        {/* <button className="pro-btn" onClick={handleClick}> Logout </button> */}
+                      <Link to='/Home'><button className="pro-btn">HomePage</button></Link> 
                         {/* {showEditForm ? editForm : editButton} */}
                     </div>
                 </div>

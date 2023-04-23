@@ -15,6 +15,7 @@ function App() {
   const [user, setUser] = useState([]);
   const [posts, setPosts] = useState([]);
   const [currentPost, setCurrentPost] = useState('') 
+  const [comments, setComments] = useState([])
   const [search, setSearch] = useState('')
 
 
@@ -46,7 +47,7 @@ function App() {
     fetch("/posts")
     .then(resp => resp.json())
     .then(data => setPosts(data))
-  }, [])
+  }, [comments])
 
 
 // get posts 
@@ -82,15 +83,18 @@ const filterPosts = posts.filter(post => (
     setCurrentUser(null)
   }
 
+  // Editing user details
   const onEdit = (modifiedUser) => {
     const editUser = user.map(user => currentUser.id === user.id ? modifiedUser : user)
     setCurrentUser(editUser)
   }
 
+  // Search through post
   const newSearch = (value) => {
     setSearch(value)
   }
 
+  // Deleting post functionality
   const removePost = (currentUserId) => {
     const updatedPost = posts.filter((post) => post.id !== currentUserId)
     setPosts(updatedPost)
@@ -107,6 +111,8 @@ const filterPosts = posts.filter(post => (
  const updatePost= posts.map(task => task.id === modifiedPost.id ? modifiedPost: task)
  setPosts(updatePost)
 }
+
+
   
 console.log()
   return (
@@ -127,6 +133,7 @@ console.log()
             <Route path='/Home'>
               <Home 
               posts={filterPosts}
+              comments={comments}
               setPosts={setPosts}
               user={user}
               handleLogout={handleLogout} 
@@ -137,6 +144,8 @@ console.log()
               search={search}
               editPost={editPost}
               removePost={removePost}
+              stateComments={comments}
+              setComments={setComments}
               />
             </Route>
             <Route exact path='/'>
@@ -155,6 +164,7 @@ console.log()
             <Route path='/Post'>
               <Post 
               posts={posts}
+              setCurrentPost={setCurrentPost}
               />
             </Route>
         </Switch>

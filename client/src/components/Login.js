@@ -38,6 +38,7 @@ function Login({ handleLogin, updateUser }) {
 
     return (
         <div className="login">
+          <br/>
           <h2>Login</h2>
             <form>
           <input 

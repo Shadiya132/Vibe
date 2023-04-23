@@ -11,21 +11,13 @@ Vibe is an app where users can meet, share and discuss their thoughts with each 
 ### AUTH
 * A user can signup and create an account.
 * A user can login to an account.
-* A user can edit their account.
 * A user can logout of their account.
-* A user can edit their profile details.
 ### MVP CRUD
 * A user can view post made by other users. (READ)
 * A user can create a post (CREATE)
-* A user can delete a post from their profile page. (DELETE)
-* A user can like/dislike posts.(UPDATE)
-### Stretch goals
-* A user can post comments from their profile.
-* A user can make comments on other existing posts.
-* A user can sort/search through previous post.
-* A user can chat with other followers.
-* A user can create groupchats with mutual followers.
-* A user can play games with other followers.
+* A user can delete a post that they created. (DELETE)
+* A user can edit the post that they created.(UPDATE)
+
 
 ## Backend
 
@@ -52,3 +44,5 @@ Vibe is an app where users can meet, share and discuss their thoughts with each 
 - Validates length for comment [between 1 and 100].
 - Validates length for post [between 1 and 200].
 - Validates presence for followed_id, follower_id and user_id, in posts and comments.
+
+
